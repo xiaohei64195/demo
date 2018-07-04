@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta content="telephone=no,email=no" name="format-detection">
+        <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/example.css" />
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+
+        <title>再来一波</title>
+    </head>
+    <body>
+    	<div id="app">
+    		<div class="header"></div>
+    	<ul>
+    		<li v-for="item in list.slice(0,2)">
+    			<img :src="item.imgSrc" alt="">
+    			<div class="text">
+	    			<a class="brief" href="">{{item.poductName}}</a>
+	    			<span class="text-back">双11价</span><span class="text-title">￥{{item.price}}（{{item.preferential}}）</span>
+	    			<span class="text-show">{{item.activityType}}</span>
+	    			<a class="butt" href="">{{item.activeName}}</a>
+    			</div>
+    		</li>
+    		<li>
+    			<img src="" alt="">
+    			<div class="text">
+	    			<a class="brief" href="">Nike 耐克官方ZOOM KOBE VENOMENON 5 EP科比男子篮球鞋815757</a>
+	    			<span class="text-back">双11价</span><span class="text-title">￥290.03（满400减100）</span>
+	    			<span class="text-show">1小时热卖2582件</span>
+	    			<a class="butt" href="">马上抢!</a>
+    			</div>
+    		</li>
+    		<li>
+    			<img src="" alt="">
+    			<div class="text">
+	    			<a class="brief" href="">Nike 耐克官方ZOOM KOBE VENOMENON 5 EP科比男子篮球鞋815757</a>
+	    			<span class="text-back">双11价</span><span class="text-title">￥290.03（满400减100）</span>
+	    			<span class="text-show">1小时热卖2582件</span>
+	    			<a class="butt" href="">马上抢!</a>
+    			</div>
+    		</li>
+    		<li>
+    			<img src="" alt="">
+    			<div class="text">
+	    			<a class="brief" href="">Nike 耐克官方ZOOM KOBE VENOMENON 5 EP科比男子篮球鞋815757</a>
+	    			<span class="text-back">双11价</span><span class="text-title">￥290.03（满400减100）</span>
+	    			<span class="text-show">1小时热卖2582件</span>
+	    			<a class="butt" href="">马上抢!</a>
+    			</div>
+    		</li>
+    		<li>
+    			<img src="" alt="">
+    			<div class="text">
+	    			<a class="brief" href="">Nike 耐克官方ZOOM KOBE VENOMENON 5 EP科比男子篮球鞋815757</a>
+	    			<span class="text-back">双11价</span><span class="text-title">￥290.03（满400减100）</span>
+	    			<span class="text-show">1小时热卖2582件</span>
+	    			<a class="butt" href="">马上抢!</a>
+    			</div>
+    		</li>
+    		<li>
+    			<img src="" alt="">
+    			<div class="text">
+	    			<a class="brief" href="">Nike 耐克官方ZOOM KOBE VENOMENON 5 EP科比男子篮球鞋815757</a>
+	    			<span class="text-back">双11价</span><span class="text-title">￥290.03（满400减100）</span>
+	    			<span class="text-show">1小时热卖2582件</span>
+	    			<a class="butt" href="">马上抢!</a>
+    			</div>
+    		</li>
+    		<li>
+    			<img src="" alt="">
+    			<div class="text">
+	    			<a class="brief" href="">Nike 耐克官方ZOOM KOBE VENOMENON 5 EP科比男子篮球鞋815757</a>
+	    			<span class="text-back">双11价</span><span class="text-title">￥290.03（满400减100）</span>
+	    			<span class="text-show">1小时热卖2582件</span>
+	    			<a class="butt" href="">马上抢!</a>
+    			</div>
+    		</li>
+    	</ul>
+        <div class="footer"></div>	
+    	</div>
+        
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+    	var vm = new Vue({
+			    	el: '#app',
+			    	data: {
+						list: [
+							// { 
+							// 	"itemLink": "##", 
+							// 	"imgSrc": "https://placeimg.com/350/350/people/grayscale", "poductName":"Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093", 
+							// 	"price": "299.06", 
+							// 	"preferential": "满400减100", 
+							// 	"activityType": "1小时内热卖5885件", 
+							// 	"shopLink":"##", 
+							// 	"activeName": "马上抢！"
+							// },
+						],
+				    },
+				    mounted: function() {
+				    	this.getData();
+				    },
+				    methods: {
+				    	getData: function() {
+				    		var self = this;
+				    		$.post('http://localhost:8888/getData', {}, function(res){
+				    			self.list = res.items;
+				    		},'JSON')
+				    	}
+				    }
+				 })    	
+    </script>
+
+</html>

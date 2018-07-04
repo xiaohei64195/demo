@@ -1,0 +1,79 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+body{
+	background-color: gray;
+}
+.box{
+	position: relative;
+	width: 480px;
+	height: 640px;
+	margin: 0 auto;
+	top: 10px;
+	overflow: hidden;
+}
+.box .pic-ul{
+	width: 3360px;
+	height: 640px;
+	position: absolute;
+	left: 0px;
+}
+.box .pic-ul li{
+	float: left;
+}
+.box .pic-ul li img{
+	width: 480px;
+	height: 640px;
+}
+
+
+.box .box-cir{
+	width: 100%;
+	height: 10px;
+	position: absolute;
+	bottom: 10px;
+}
+.box .box-cir .cir-ul {
+	width: 120px;
+	height: 10px;
+	margin: 0 auto;
+}
+.box .box-cir .cir-ul i{
+	float: left;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin: 0 5px 0 5px;
+	background-color: white;
+}
+.box .box-cir .cir-ul .cir-change{
+	background-color: yellow;
+}
+
+
+.box .btn{
+	opacity: 0.5;
+}
+.box .btn:hover{
+	opacity: 1;
+}
+.box .btn span {
+	position: absolute;
+	top: 50%;
+	display: inline-block;
+	width: 50px;
+	height: 70px;
+	color: yellow;
+	font-size: 20px;
+	text-align: center;
+	line-height: 70px;
+	background-color: black;
+}
+.box .btn .btn-left{
+	left: 10px;
+}
+.box .btn .btn-right{
+	right: 10px;
+}
